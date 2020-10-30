@@ -4,7 +4,7 @@ import { modulesMassList } from "./inputs";
 
 const sumOfFuelRequirements = modulesMassList
   .map((mass) => Math.floor(mass / 3) - 2)
-  .reduce((acc, curVal) => acc + curVal);
+  .reduce((total, current) => total + current);
 
 console.log("Sum of fuel requirements: ", sumOfFuelRequirements);
 
@@ -19,6 +19,6 @@ const sumOfAllFuelRequirements = modulesMassList
     }
     return fuelRequirements;
   })
-  .reduce((acc, curVal) => acc + curVal);
+  .reduce((total, current) => total + current);
 
 console.log("Sum of all fuel requirements: ", sumOfAllFuelRequirements);
