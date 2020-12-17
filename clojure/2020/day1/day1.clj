@@ -13,7 +13,7 @@
 ;; Day 1
 ;; Part 1
 
-(defn find-sum-entries
+(defn find-pair
   [expense-report]
   (reduce
    (fn [numbers number]
@@ -24,10 +24,12 @@
    #{}
    expense-report))
 
-(prn (apply * (find-sum-entries (read-input input-1))))
+(prn (apply * (find-pair (read-input input-1))))
 
 
 ;; Tests
+
+
 (def test-expense-report
   [1721
    979
@@ -38,4 +40,4 @@
 
 (deftest fix-expense-report
   (testing "find two entries that sum up to 2020"
-    (is (= (apply + (find-sum-entries test-expense-report)) 2020))))
+    (is (= (apply + (find-pair test-expense-report)) 2020))))
